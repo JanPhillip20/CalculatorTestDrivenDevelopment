@@ -6,13 +6,6 @@ namespace TestCalculatorTestDrivenDevelopment
 {
     public class Tests
     {
-        private CalculationOperations _calculationOperations;
-        [SetUp]
-        public void Setup()
-        {
-            _calculationOperations = new CalculationOperations();
-        }
-
         [Test]
         public void Test1()
         {
@@ -20,43 +13,52 @@ namespace TestCalculatorTestDrivenDevelopment
         }
 
         [Test]
-        public void Test_AddTwoDoubleNumbers()
+        public void Test_AddTwoDoubleNumbers_InsertToPositivNumbers()
         {
             double firstNumber = 4.6;
             double secondNumber = 10;
             double resultExpected = 14.6;
-            double resultActual = _calculationOperations.addTwoNumbers(firstNumber, secondNumber);
+            double resultActual = CalculationOperations.AddTwoNumbers(firstNumber, secondNumber);
             Assert.AreEqual(resultExpected, resultActual, 0);
         }
 
         [Test]
-        public void Test_SubTwoDoubleNumbers()
+        public void Test_SubTwoDoubleNumbers_InsertTwoPositivNumbers()
         {
             double firstNumber = 20;
             double secondNumber = 10;
             double resultExpected = 10;
-            double resultActual = _calculationOperations.subTwoNumbers(firstNumber, secondNumber);
+            double resultActual = CalculationOperations.SubTwoNumbers(firstNumber, secondNumber);
             Assert.AreEqual(resultExpected, resultActual, 0);
         }
         
         [Test]
-        public void Test_MultiplyTwoDoubleNumbers()
+        public void Test_MultiplyTwoDoubleNumbers_InsterTwoPositivNumbers()
         {
             double firstNumber = 5;
             double secondNumber = 10;
             double resultExpected = 50;
-            double resultActual = _calculationOperations.multiplyTwoNumbers(firstNumber, secondNumber);
+            double resultActual = CalculationOperations.MultiplyTwoNumbers(firstNumber, secondNumber);
             Assert.AreEqual(resultExpected, resultActual, 0);
         }
         
         [Test]
-        public void Test_DifferenceOfTwoDoubleNumbers()
+        public void Test_DifferenceOfTwoDoubleNumbers_InsertRegularNumbers()
         {
             double firstNumber = 5;
             double secondNumber = 10;
             double resultExpected = 0.5;
-            double resultActual = _calculationOperations.differenceOfTwoNumbers(firstNumber, secondNumber);
+            double resultActual = CalculationOperations.DifferenceOfTwoNumbers(firstNumber, secondNumber);
             Assert.AreEqual(resultExpected, resultActual, 0);
+        }
+        [Test]
+        public void Test_DifferenceOfTwoDoubleNumbers_InsertZeroAsSecondNumber()
+        {
+            double firstNumber = 5;
+            double secondNumber = 0;
+            double resultExpected = 0.0;
+            double resultActual = CalculationOperations.DifferenceOfTwoNumbers(firstNumber, secondNumber);
+            Assert.AreEqual(resultExpected, resultActual, 0.5);
         }
     }
 }

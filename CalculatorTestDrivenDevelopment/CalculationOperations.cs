@@ -1,31 +1,30 @@
+using System;
+
 namespace CalculatorTestDrivenDevelopment
 {
-    public class CalculationOperations
+    public static class CalculationOperations
     {
-        public CalculationOperations(){}
-        public double addTwoNumbers(double firstNumber, double secondNumber)
+        public static double AddTwoNumbers(double firstNumber, double secondNumber)
         {
             return firstNumber + secondNumber;
         }
 
-        public double subTwoNumbers(double firstNumber, double secondNumber)
+        public static double SubTwoNumbers(double firstNumber, double secondNumber)
         {
-            return 0;
+            return firstNumber - secondNumber;
         }
 
-        public double multiplyTwoNumbers(double firstNumber, double secondNumber)
+        public static double MultiplyTwoNumbers(double firstNumber, double secondNumber)
         {
-            return 0;
+            return firstNumber * secondNumber;
         }
 
-        public double differenceOfTwoNumbers(double firstNumber, double secondNumber)
+        public static double DifferenceOfTwoNumbers(double firstNumber, double secondNumber)
         {
-            return 0;
+            if (secondNumber != 0)
+                return firstNumber / secondNumber;
+            return 0.0;
         }
 
-        public bool checkIfSecondNumberIsZero(double firstNumber, double secondNumber)
-        {
-            return secondNumber == 0;
-        }
     }
 }
